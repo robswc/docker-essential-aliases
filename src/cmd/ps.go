@@ -1,9 +1,8 @@
 package cmd
 
 import (
-	"fmt"
+	"docker-essential-aliases/util"
 	"github.com/spf13/cobra"
-	"os/exec"
 )
 
 // psCmd represents the ps command
@@ -24,21 +23,8 @@ var psCmd = &cobra.Command{
 			baseCmd = append(baseCmd, "-a")
 		}
 
-		if verbose {
-			fmt.Println("Docker Command:")
-			fmt.Println(baseCmd)
-		}
-
-		// create the command
-		dockerCmd := exec.Command(baseCmd[0], baseCmd[1:]...)
-		dockerCmd.Stdout = cmd.OutOrStdout()
-		dockerCmd.Stderr = cmd.OutOrStderr()
-		err := dockerCmd.Run()
-		if err != nil {
-			fmt.Println(err)
-		} else {
-			fmt.Println("Docker Command Executed Successfully")
-		}
+		// run the command
+		util.RunCommand(cmd, baseCmd, verbose)
 	},
 }
 
