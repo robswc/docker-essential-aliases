@@ -24,6 +24,13 @@ func createIfNotExists(file string) {
 	}
 }
 
+func DeleteTempFile() {
+	err := os.Remove(GetTempFile())
+	if err != nil {
+		panic(err)
+	}
+}
+
 func SaveToTemp(key string, value string) {
 	// saves the value to a temporary .yml file
 	ymlFile := GetTempFile()
@@ -36,13 +43,14 @@ func SaveToTemp(key string, value string) {
 		panic(err)
 	}
 
-	var m map[string]interface{}
+	// create a map from the file
+	m := make(map[string]interface{})
 	err = yaml.Unmarshal(data, &m)
 	if err != nil {
 		panic(err)
 	}
 
-	// Update the map with the new key-value pair
+	// Update the map with the new key-value pair, if it exists
 	m[key] = value
 
 	yamlData, err := yaml.Marshal(&m)
@@ -60,6 +68,12 @@ func SaveToTemp(key string, value string) {
 func GetFromTemp(key string) string {
 	// gets the value from a temporary .yml file
 	ymlFile := GetTempFile()
+
+	// check that the file exists
+	_, err := os.Stat(ymlFile)
+	if os.IsNotExist(err) {
+		return ""
+	}
 
 	// read the file
 	data, err := os.ReadFile(ymlFile)

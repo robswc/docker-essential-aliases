@@ -24,7 +24,7 @@ var psCmd = &cobra.Command{
 		}
 
 		// run the command
-		util.RunCommand(cmd, baseCmd, verbose)
+		util.RunCommand(baseCmd, verbose)
 	},
 }
 

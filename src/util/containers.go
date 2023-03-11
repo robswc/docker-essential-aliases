@@ -55,7 +55,7 @@ func GetContainer(providedNameOrId string) Container {
 			os.Exit(1)
 		}
 	} else {
-		fmt.Println("No container name or id provided. Using the last container.")
+		fmt.Println("No container name or id provided. Attempting to use the last container interacted with.")
 		// see if we can use the last container ID first
 		container = dockerInspect(GetFromTemp(WorkingContainerId))
 		if container.Id == "" {
