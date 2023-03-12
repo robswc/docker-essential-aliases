@@ -41,6 +41,7 @@ dea enter # first tries w/container ID but falls back on name, so it will still 
 
 ### Easier ps
 ```bash
+# planned
 dea ps --columns [columns,sep,by,comma] # same as docker ps --format "table {{columns}}"
 dea ps --set-columns [columns,sep,by,comma] # sets the default columns for dea ps
 dea ps --reset-columns # resets the default columns for dea ps
