@@ -1,6 +1,10 @@
 ![docker-essential-aliases-logo](https://user-images.githubusercontent.com/38849824/222996047-9c454b3c-c8f5-4199-9f6d-0e24f5043ea6.png)
 
-# CURRENTLY IN TESTING
+* [Usage](#usage)
+* [Features](#features)
+* [Installation](#installation)
+  * [Linux](#linux)
+  * [Building from source](#building-from-source)
 
 # Usage
 
@@ -45,6 +49,9 @@ label it "Feature Request."
 
 ### Linux
 
+Currently, only Linux is supported. If you would like to see support for other platforms, 
+please [open an issue](https://github.com/robswc/docker-essential-aliases/issues/new).  I'm 99% sure it will work on Mac tho!
+
 ```bash
 # Download the latest release via github api
 curl -s https://api.github.com/repos/robswc/docker-essential-aliases/releases/latest | grep "browser_download_url.*dea" | cut -d : -f 2,3 | tr -d \" | wget -qi -
@@ -58,7 +65,7 @@ sudo mv dea /usr/local/bin/dea
 
 ### Building from source
 
-To build from source, just clone the repo and use make.
+To build from source, you can clone the repo and use make!
 
 ```bash
 # Clone the repo
