@@ -1,5 +1,12 @@
 ![docker-essential-aliases-logo](https://user-images.githubusercontent.com/38849824/222996047-9c454b3c-c8f5-4199-9f6d-0e24f5043ea6.png)
 
+# Docker Essential Aliases
+Docker Essential Aliases (dea) is a set of aliases and utility functions for Docker.
+The main goal of dea is to reduce the amount of typing and time spent on common Docker commands and tasks.
+
+Please note, this was a project mainly for personal use, but I love open source and I hope others find it useful!
+Just be aware I don't have 100% coverage (yet!)
+
 * [Usage](#usage)
 * [Features](#features)
 * [Installation](#installation)
