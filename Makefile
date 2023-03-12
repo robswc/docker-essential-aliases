@@ -5,7 +5,6 @@ PATH := $(PATH):/usr/local/go/bin
 
 BUILD_DIR=bin
 BINARY_NAME=dea
-#GOPATH=$(shell pwd)/src
 
 build:
 	@echo "Building..."
